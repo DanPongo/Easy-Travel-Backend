@@ -32,23 +32,25 @@ class DevelopmentConfig extends AppConfig {
 }
 
 // Production 
+// Production 
 class ProductionConfig extends AppConfig {
 
     public isDevelopment = false;
     public isProduction = true;
 
     // Database: 
-    public host = "localhost"; 
-    public user = "root"; 
-    public password = ""; 
-    public database = "vacation"; 
+    public host = process.env.DB_HOST || "localhost"; 
+    public user = process.env.DB_USER || "root"; 
+    public password = process.env.DB_PASSWORD || ""; 
+    public database = process.env.DB_NAME || "vacation"; 
 
     // Server port: 
-    public port = 3001;
+    public port = parseInt(process.env.PORT) || 3001;
 
-    public frontendUrl = "";
+    public frontendUrl = process.env.FRONTEND_URL || "";
 
 }
+
 
 const appConfig = (process.env.NODE_ENV === "production") ? new ProductionConfig() : new DevelopmentConfig();
 
