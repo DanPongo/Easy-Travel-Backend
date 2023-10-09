@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "20a68fd6-b951-4d32-90ec-3b2ad9408536",
+		"name": "Vacation final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28709417"
+	},
+	"item": [
+		{
+			"name": "GET all vacations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZmlyc3ROYW1lIjoiZGFuaWVsIiwibGFzdE5hbWUiOiJodXRtYWNoZXIiLCJlbWFpbCI6ImRhbmllbC5oMTIzNzdAZ21haWwuY29tIiwicm9sZUlkIjoxfSwiaWF0IjoxNjk2MDYzNjgwLCJleHAiOjE2OTYwNzQ0ODB9.7KycIvFDSdy7aZZXXXCUXlZOMD3DPYeMAXVMgKnWurA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST new vacation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZmlyc3ROYW1lIjoiZGFuaWVsIiwibGFzdE5hbWUiOiJodXRtYWNoZXIiLCJlbWFpbCI6ImRhbmllbC5oMTIzNzdAZ21haWwuY29tIiwicm9sZUlkIjoxfSwiaWF0IjoxNjk2MDYzNjgwLCJleHAiOjE2OTYwNzQ0ODB9.7KycIvFDSdy7aZZXXXCUXlZOMD3DPYeMAXVMgKnWurA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"An amazing vacation to the serene landscapes of New Zealand.\",\r\n  \"destination\": \"New Zealand\",\r\n  \"imageName\": \"new_zealand.jpg\",\r\n  \"checkIn\": \"01/10/2023\",\r\n  \"checkOut\": \"10/10/2023\",\r\n  \"price\": \"1000\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vacations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE exist vacatation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZmlyc3ROYW1lIjoiZGFuaWVsIiwibGFzdE5hbWUiOiJodXRtYWNoZXIiLCJlbWFpbCI6ImRhbmllbC5oMTIzNzdAZ21haWwuY29tIiwicm9sZUlkIjoxfSwiaWF0IjoxNjk2MDYzNjgwLCJleHAiOjE2OTYwNzQ0ODB9.7KycIvFDSdy7aZZXXXCUXlZOMD3DPYeMAXVMgKnWurA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"daniel.h12377@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"bamba\",\r\n    \"lastName\": \"nogat\",\r\n    \"email\": \"emaihing@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EDIT vacation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZmlyc3ROYW1lIjoiZGFuaWVsIiwibGFzdE5hbWUiOiJodXRtYWNoZXIiLCJlbWFpbCI6ImRhbmllbC5oMTIzNzdAZ21haWwuY29tIiwicm9sZUlkIjoxfSwiaWF0IjoxNjk2MDYzNjgwLCJleHAiOjE2OTYwNzQ0ODB9.7KycIvFDSdy7aZZXXXCUXlZOMD3DPYeMAXVMgKnWurA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"An amazing vacation to the serene landscapes of New Zealand.\",\r\n  \"destination\": \"Maroko\",\r\n  \"imageName\": \"new_zealand.jpg\",\r\n  \"checkIn\": \"01/10/2023\",\r\n  \"checkOut\": \"10/10/2023\",\r\n  \"price\": \"1000\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"41"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6MSwiZmlyc3ROYW1lIjoiTmljb2xlIiwibGFzdE5hbWUiOiJaYWJhcmluc2t5IiwidXNlcm5hbWUiOiJVbmlDb2xlIiwicm9sZUlkIjoxfSwiaWF0IjoxNjc0OTMzMDIyLCJleHAiOjE2NzQ5NDM4MjJ9.J7bJbuOaABgnZARKVv6xjTrcD_MgqqGqVKBlV4xdLck",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
