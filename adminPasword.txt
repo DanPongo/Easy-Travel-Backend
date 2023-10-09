@@ -1,3 +1,0 @@
-admin: 1
-email: daniel.h12377@gmail.com 
-password: 1234
