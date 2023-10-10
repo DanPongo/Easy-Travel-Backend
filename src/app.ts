@@ -27,7 +27,7 @@ server.use(helmet());
 server.use(cors({ origin: appConfig.frontendUrl }));
 
 // Tell express to take JSON resides in request's body into request.body object:
-server.use(express.json());
+server.use(cors());
 
 // Integrate express-fileupload middleware to handle uploaded files:
 server.use(expressFileUpload());
