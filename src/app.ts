@@ -8,7 +8,7 @@ import vacationsController from "./6-controllers/vacations-controller";
 import authController from "./6-controllers/auth-controller";
 import followersController from "./6-controllers/followers-controller";
 import expressRateLimit from "express-rate-limit";
-import helmet, { crossOriginResourcePolicy } from "helmet";
+import helmet from "helmet";
 
 // Create express server:
 const server = express();
@@ -17,24 +17,25 @@ const server = express();
 server.use("/api/", expressRateLimit({
     max: 50, // Maximum requests per same client.
     windowMs: 1000, // Time window to allow the max requests.
-    message: "Are you a hacker?" // When performing more request - return this message.
+    message: "Too many requests, please try again later."
 }));
 
 // Helmet defense against malicious headers:
-server.use(helmet({
-    crossOriginResourcePolicy: false,
-}));
+server.use(helmet());
 
 // Limit CORS policy to our front end if data is not public to all world:
 server.use(cors({ origin: appConfig.frontendUrl }));
 
-// Tall express to take JSON resides in request's body into request.body object:
+// Tell express to take JSON resides in request's body into request.body object:
 server.use(express.json());
 
 // Integrate express-fileupload middleware to handle uploaded files:
 server.use(expressFileUpload());
 
-//Binding our middleware:
+// Default route for the root endpoint
+server.get("/", (req, res) => {
+    res.send("Welcome to Easy Travel Backend!");
+});
 
 // Tell the server to listen on any router written in our controller:
 server.use("/api", vacationsController);
@@ -48,4 +49,3 @@ server.use("*", routeNotFound);
 server.use(catchAll);
 
 server.listen(appConfig.port, () => console.log(`Listening on http://localhost:${appConfig.port}`));
-
